@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html><head><title>Contact</title></head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: #222;}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {margin-left: 120px}
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+</style>
+<body><script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script>
+        function snow() {
+            //1, define a snowflake template
+            var flake = $("<div>").css({
+                "position": "absolute",
+                "color": "#fff"
+            }).html("❄️");
+ 
+            //Get the width of the page, use this number to calculate, the value of left when the snowflake starts
+            var documentWidth = $(document).width();
+ 
+            //Get the height of the page, which is equivalent to the position of the Y axis when the snowflakes fall
+            var documentHieght = $(document).height();
+ 
+            //Define the number of milliseconds to generate a snowflake
+            var millisec = 100;
+            //2, set the first timer, a periodic timer, and generate a snowflake every time (millisec);
+            setInterval(function() {
+                //Randomly generate the value of left at the beginning of the snowflake falling, which is equivalent to the position of the X axis at the beginning
+                var startLeft = Math.random() * documentWidth;
+ 
+                //Randomly generate the value of left at the end of snowflake falling, which is equivalent to the position of the X axis at the end
+                var endLeft = Math.random() * documentWidth;
+ 
+                // Randomly generate snowflake size
+                var flakeSize = 5 + 20 * Math.random();
+ 
+                //Randomly generate the falling duration of snowflakes
+                var durationTime = 4000 + 7000 * Math.random();
+ 
+                //Randomly generate the transparency at the beginning of falling snowflakes
+                var startOpacity = 0.7 + 0.3 * Math.random();
+ 
+                //Randomly generate the transparency at the end of falling snowflakes
+                var endOpacity = 0.2 + 0.2 * Math.random();
+ 
+                //3. Clone a snowflake template, define the initial style of the snowflake, and stitch it into the page
+                flake.clone().appendTo($("body")).css({
+                    "left": startLeft,
+                    "opacity": startOpacity,
+                    "font-size": flakeSize,
+                    "top": "-25px",
+                }).animate({ //Execute animation
+                    "left": endLeft,
+                    "opacity": endOpacity,
+                    "top": documentHieght
+                }, durationTime, function() {
+                    //4. When the snowflake falls, delete the snowflake.
+                    $(this).remove(); 
+                });
+            }, millisec);
+        };
+        snow();
+    </script><body class="w3-black">
+
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <!-- Avatar image in top left corner -->
+  <img src="images/pic3.png" style="width:100%">
+  <a href="index2.html" class="w3-bar-item w3-button w3-padding-large w3-black">
+    <i class="fa fa-home w3-xxlarge"></i>
+    <p>HOME</p>
+  </a>
+  <a href="Personal Summary.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-user w3-xxlarge"></i>
+    <p>PERSONAL SUMMARY</p>
+  </a>
+  <a href="Objective.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-eye w3-xxlarge"></i>
+    <p>OBJECTIVE</p>
+  </a>
+  <a href="Education.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-user w3-xxlarge"></i>
+    <p>EDUCATION</p>
+  </a>
+  <a href="Extra Curriculars.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-user w3-xxlarge"></i>
+    <p>EXTRA CURRICULARS</p>
+  </a>
+  <a href="Work Experience.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-user w3-xxlarge"></i>
+    <p>WORK EXPERIENCE</p>
+  </a>
+  <a href="Award.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-user w3-xxlarge"></i>
+    <p>AWARD</p>
+  </a>
+  <a href="Skill and Strength.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-user w3-xxlarge"></i>
+    <p>SKILL AND STRENGTH</p>
+  </a>
+  <a href="References.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-search w3-xxlarge"></i>
+    <p>REFERENCES</p>
+  </a>
+  <a href="Contact.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-envelope w3-xxlarge"></i>
+    <p>CONTACT</p>
+  </a>
+</nav>
+
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <a href="index2.html" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+    <a href="Personal Summary.html" class="w3-bar-item w3-button" style="width:25% !important">PERSONAL SUMMARY</a>
+    <a href="Objective.html" class="w3-bar-item w3-button" style="width:25% !important">OBJECTIVE</a>
+    <a href="Education.html" class="w3-bar-item w3-button" style="width:25% !important">EDUCATION</a>
+    <a href="Extra Curriculars.html" class="w3-bar-item w3-button" style="width:25% !important">EXTRA CURRICULARS</a>
+    <a href="Work Experience.html" class="w3-bar-item w3-button" style="width:25% !important">WORK EXPERIENCE</a>
+    <a href="Award.html" class="w3-bar-item w3-button" style="width:25% !important">AWARD</a>
+    <a href="Skill and Strength.html" class="w3-bar-item w3-button" style="width:25% !important">SKILL AND STRENGTH</a>
+    <a href="References.html" class="w3-bar-item w3-button" style="width:25% !important">REFERENCES</a>
+    <a href="Contact.html" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
+  </div>
+</div>
+
+ <!-- Contact Section -->
+  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+    <h2 class="w3-text-light-grey">Contact Me</h2>
+    <hr style="width:200px" class="w3-opacity">
+     <body background="images/pic10.jpg" width="3000" height="4500"> 
+
+    <div class="w3-section">
+      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Kuala Lumpur, Malaysia</p>
+      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: (+60) 11-28459128</p>
+      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: nurulhafeezabintighazali1999@gmail.com</p>
+    </div><br>
+    <p>Let's get in touch. Send me a message:</p>
+
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
+      <p>
+        <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </p>
+    </form>
+  <!-- End Contact Section -->
+  </div>
+  
+    <!-- Footer -->
+  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+    <p class="w3-medium">Developed by Nurul Hafeeza © 2021</p>
+
+     <p align="left">
+  <audio controls autoplay>
+  <source src="sound/Uplifting.mp3" type="audio/mpeg">
+  </audio>
+
+    <!-- Footer -->
+  <footer class="w3-container w3-padding-32">  
+    <div class="w3-row-padding"> 
+      <div class="w3-third">
+        <h3>QUOTES</h3>
+        <p align="justify">
+        <font color="grey" face="forte"> "Do not look at how long it will take you to accomplish those goals or how hard it will be, take it step by step and know that one day it will all be worth it."</font></p>      
+      </div>
+    
+      <div class="w3-third">
+        <h3>BLOG POSTS</h3>
+        <ul class="w3-ul">
+          <li class="w3-padding-16 w3-hover-black">
+            <img src="images/pic1.png" class="w3-left w3-margin-right" style="width:50px">
+            <span class="w3-large">Hafeeza</span><br>
+            <span>Online Resume</span>
+          </li>
+          <li class="w3-padding-16 w3-hover-black">
+            <img src="images/pic2.png" class="w3-left w3-margin-right" style="width:50px">
+            <span class="w3-large">Hafeeza</span><br>
+            <span>Personal Webpage</span>
+          </li> 
+        </ul>
+      </div>
+
+      <div class="w3-third">
+        <h3>POPULAR TAGS</h3>
+        <p>
+          <span class="w3-tag w3-black w3-margin-bottom">Resume</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Summary</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Objective</span>
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Education</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Contact</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Award</span>
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Home</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Index</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Experience</span>
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Malaysia</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Skill</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Strength</span>
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Curriculars</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Ideas</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- End footer -->
+  </footer>
+
+<!-- END PAGE CONTENT -->
+</div>
+
+</body>
+</html>
